@@ -11,6 +11,7 @@
   --color-grey-dark-3: #999;
 
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
 
   --line: 1px solid var(--color-grey-light-2);
 }
@@ -284,6 +285,14 @@
   cursor: pointer;
   transition: all 0.2s;
 }
+.span {
+  margin-left: 3px;
+  transition: margin-left 0.2s;
+}
+
+.span:hover {
+  margin-left: 8px;
+}
 
 .btn-inline:hover {
   color: var(--color-grey-dark-1);
@@ -365,8 +374,6 @@
   margin-right: auto;
 }
 
-.recommend__friends {
-}
 .recommend__photo {
   box-sizing: content-box;
   height: 4rem;
@@ -377,4 +384,132 @@
 
 .recommend__photo:not(:last-child) {
   margin-right: -1.5rem;
+}
+
+/* ///////REVIEWS/////// */
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.review__text {
+  margin-bottom: 2rem;
+  z-index: 10;
+  position: relative;
+}
+.review__user {
+  display: flex;
+  align-items: center;
+}
+.review__photo {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+.review__user-box {
+  margin-right: auto;
+}
+
+.review__user-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.review__user-date {
+  font-size: 1rem;
+  color: var(--color-grey-dark-3);
+}
+
+.review__rating {
+  color: var(--color-primary);
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+.review::before {
+  content: "\201C";
+  position: absolute;
+  top: -2.75rem;
+  left: -1rem;
+  line-height: 1;
+  font-size: 20rem;
+  color: var(--color-grey-light-2);
+  font-family: sans-serif;
+  z-index: 1;
+}
+
+/* ///////Call to action/////// */
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.cta__book-now {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+/* ///////Call to action/////// */
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn__visible {
+  display: inline-block;
+  padding: 2rem 7.5rem;
+  height: 100%;
+  width: 100%;
+}
+
+.btn__invisible {
+  display: inline-block;
+  position: absolute;
+  padding: 2rem 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: -100%;
+  transition: all 0.2s;
+}
+
+.btn__visible:hover {
+  transform: translateY(100%);
+}
+
+.btn__invisible:hover {
+  top: 0;
+}
+
+.btn:hover {
+  background-image: linear-gradient(
+    to left,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+}
+
+.btn:focus {
+  outline: none;
+  animation: pulsate 1s infinite;
 }
